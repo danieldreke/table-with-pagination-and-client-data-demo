@@ -16,13 +16,14 @@
       margin: 20px;
     }
   </style>
+  <script src="data.js"></script>
 </head>
 
 <body>
   <!-- online editor bootstrap table: https://live.bootstrap-table.com/example/welcomes/from-data.html -->
   <!-- bootstrap table options: https://bootstrap-table.com/docs/api/table-options -->
-  <table id="table" data-pagination="true" data-side-pagination="client" data-page-size="2"
-    data-page-list="[2, 5, 10, All]" data-pagination-v-align="top">
+  <table id="table" data-pagination="true" data-side-pagination="client"
+    data-page-list="[10, 20, 50, 100, 200, 500, All]" data-pagination-v-align="top">
     <thead>
       <tr>
         <th data-field="id">ID</th>
@@ -34,42 +35,7 @@
 
   <script>
     var $table = $('#table')
-
-    $(function () {
-      var data = [
-        {
-          'id': 0,
-          'name': 'Item 0',
-          'price': '$0'
-        },
-        {
-          'id': 1,
-          'name': 'Item 1',
-          'price': '$1'
-        },
-        {
-          'id': 2,
-          'name': 'Item 2',
-          'price': '$2'
-        },
-        {
-          'id': 3,
-          'name': 'Item 3',
-          'price': '$3'
-        },
-        {
-          'id': 4,
-          'name': 'Item 4',
-          'price': '$4'
-        },
-        {
-          'id': 5,
-          'name': 'Item 5',
-          'price': '$5'
-        }
-      ]
-      $table.bootstrapTable({ data: data })
-    })
+    $table.bootstrapTable({ data: data })
   </script>
 </body>
 
