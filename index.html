@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Table With Pagination And Client Data Demo</title>
+  <!-- source working references: https://github.com/jorgelf/bootstrap-multiselect-showselected -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" type="text/css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>  
+  <!-- bootstrap table: https://bootstrap-table.com -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
+  <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+  <style>
+    body {
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- bootstrap table options: https://bootstrap-table.com/docs/api/table-options -->
+  <table id="table" data-pagination="true" data-side-pagination="client" data-page-size="2"
+    data-page-list="[2, 5, 10, All]" data-pagination-v-align="top">
+    <thead>
+      <tr>
+        <th data-field="id">ID</th>
+        <th data-field="name">Item Name</th>
+        <th data-field="price">Item Price</th>
+      </tr>
+    </thead>
+  </table>
+
+  <script>
+    var $table = $('#table')
+
+    $(function () {
+      var data = [
+        {
+          'id': 0,
+          'name': 'Item 0',
+          'price': '$0'
+        },
+        {
+          'id': 1,
+          'name': 'Item 1',
+          'price': '$1'
+        },
+        {
+          'id': 2,
+          'name': 'Item 2',
+          'price': '$2'
+        },
+        {
+          'id': 3,
+          'name': 'Item 3',
+          'price': '$3'
+        },
+        {
+          'id': 4,
+          'name': 'Item 4',
+          'price': '$4'
+        },
+        {
+          'id': 5,
+          'name': 'Item 5',
+          'price': '$5'
+        }
+      ]
+      $table.bootstrapTable({ data: data })
+    })
+  </script>
+</body>
+
+</html>
